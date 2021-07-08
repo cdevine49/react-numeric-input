@@ -154,8 +154,8 @@ module.exports =
 	            return out;
 	        }
 	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(props) {
+	        key: 'UNSAFE_componentWillReceiveProps',
+	        value: function UNSAFE_componentWillReceiveProps(props) {
 	            var _this2 = this;
 
 	            this._isStrict = !!props.strict;
@@ -168,8 +168,8 @@ module.exports =
 	            }
 	        }
 	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate() {
+	        key: 'UNSAFE_componentWillUpdate',
+	        value: function UNSAFE_componentWillUpdate() {
 	            this.saveSelection();
 	        }
 	    }, {
@@ -194,8 +194,8 @@ module.exports =
 	            this.checkValidity();
 	        }
 	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
+	        key: 'UNSAFE_componentWillUnmount',
+	        value: function UNSAFE_componentWillUnmount() {
 	            this._isMounted = false;
 	            this.stop();
 	        }
@@ -804,7 +804,7 @@ module.exports =
 	    value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
 	    defaultValue: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
 	    strict: _propTypes2.default.bool,
-	    componentClass: _propTypes2.default.string,
+	    componentClass: _propTypes2.default.oneOfType([_propTypes2.default.func, _propTypes2.default.string]),
 	    mobile: function mobile(props, propName) {
 	        var prop = props[propName];
 	        if (prop !== true && prop !== false && prop !== 'auto' && typeof prop != 'function') {
